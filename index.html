@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ODS 10</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="shortcut icon" type="imagex/png" href="img\des.png">
+</head>
+<body>
+  
+  <div class="view-counter" aria-label="Contador de visualizações">
+    Visualizações: <span id="viewCount">0</span>
+  </div>
+
+  <div class="app-logo">
+    <img src="\img\unianchieta.webp" alt="Logo do Quiz da Igualdade" />
+  </div>
+
+  <div class="container">
+    <div id="homeScreen" class="screen active">
+      <div class="card">
+        <div class="home-icon">🌈</div>
+        <h1 class="home-title">Quiz da Igualdade!</h1>
+        <p class="home-subtitle">Aprenda sobre ODS 10 - Redução das Desigualdades</p>
+        <button class="btn-primary" onclick="startQuiz()">COMEÇAR O QUIZ!</button>
+      </div>
+    </div>
+
+    <div id="quizScreen" class="screen">
+      <div class="card">
+        <div class="quiz-header">
+          <div class="quiz-info">
+            <div class="question-number" id="questionNumber">Pergunta 1 de 10</div>
+            <div class="score" id="scoreDisplay">Acertos: 0 🎯</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressBar" style="width: 10%"></div>
+          </div>
+        </div>
+
+        <h2 class="question-text" id="questionText"></h2>
+
+        <div class="options" id="optionsContainer"></div>
+
+        <div class="feedback" id="feedback">
+          <div id="feedbackText"></div>
+          <div class="explanation" id="explanation"></div>
+        </div>
+
+        <button class="btn-next" id="nextBtn" onclick="nextQuestion()">PRÓXIMA PERGUNTA ➡️</button>
+      </div>
+    </div>
+
+    <div id="resultsScreen" class="screen">
+      <div class="card">
+        <div class="result-icon" id="resultIcon">🏆</div>
+        <h1 class="result-title">Você terminou!</h1>
+        <div class="result-score" id="finalScore">10 de 10</div>
+        <p class="result-message" id="resultMessage">
+          INCRÍVEL! Você é um expert em igualdade!
+        </p>
+        <div class="result-buttons">
+          <button class="btn-primary" onclick="restartQuiz()">JOGAR NOVAMENTE 🔄</button>
+          <button class="btn-secondary" onclick="showReview()">VER MINHAS RESPOSTAS 📋</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="reviewScreen" class="screen">
+      <div class="card">
+        <h1 class="result-title">Revisão das Respostas 📋</h1>
+        <div class="review-list" id="reviewList"></div>
+        <button class="btn-back" onclick="backToResults()">VOLTAR AOS RESULTADOS ⬅️</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
