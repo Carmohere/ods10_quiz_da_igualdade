@@ -397,3 +397,20 @@ function createConfetti() {
     }, i * 30);
   }
 }
+
+(function () {
+  const KEY = 'quizIgualdadeViews';
+
+  let count = Number(localStorage.getItem(KEY) || 0);
+  if (Number.isNaN(count)) count = 0;
+
+  count += 1;
+  localStorage.setItem(KEY, String(count));
+
+  const span = document.getElementById('viewCount');
+  if (span) {
+    span.textContent = count;
+  } else {
+    console.warn('Elemento #viewCount não encontrado no DOM.');
+  }
+})();
